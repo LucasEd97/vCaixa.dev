@@ -1,10 +1,10 @@
 {
     "type": "postgres",
-    "host": "ec2-54-211-210-149.compute-1.amazonaws.com",
+    "host": "localhost",
     "port": "5432",
-    "username": "vsulvhmgnfuekz",
-    "password": "4e8e6d85336f1502a9d6072f77f483a8bff3b6a6e720be58648d112391165501",
-    "database": "d3v3uhusl5koht",
+    "username": "postgres",
+    "password": "postgres",
+    "database": "vcaixa_dev",
     "entities": [
         "./src/models/*.ts"
     ],
