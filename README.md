@@ -26,7 +26,7 @@ docker start caixavirtual
 docker run --name vcaixa_postgres -e POSTGRES_PASSWORD=vcaixa -d postgres -p 5434:5432
 ```
 
-Para executar o projeot siga os comandos abaixo:o:
+Para executar o projeot siga os comandos abaixo:
 
 ```shell
 yarn install
