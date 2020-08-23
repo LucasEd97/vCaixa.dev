@@ -27,6 +27,8 @@ docker run --name vcaixa_postgres -e POSTGRES_PASSWORD=vcaixa -d postgres -p 543
 ```
 ⚠Observação: O container utilizado no desenvolvimento do projeto utiliza o SO Windows ⚠
 
+Para configurar o banco localmente, deve-se criar o banco conforme arquivo ```shell ormconfig.json ```
+
 Para executar o projeot siga os comandos abaixo:
 
 ```shell
