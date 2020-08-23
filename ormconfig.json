@@ -8,6 +8,12 @@
     "entities": [
         "./src/models/*.ts"
     ],
+    "extra": {
+        "ssl": true,
+        "ssl": {
+            "rejectUnauthorized": false
+        }
+    },
     "migrations": [
         "./src/database/migrations/*.ts"
     ],
