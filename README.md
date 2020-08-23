@@ -6,6 +6,7 @@ Esse projeto trata-se de um caixa virtual para auxiliar no controle do fluxo de 
 Para executar o projeto, será necessário instalar os seguintes programas:
 
 [Docker](https://docs.docker.com/docker-for-windows/install/)
+
 [Yarn](https://classic.yarnpkg.com/en/docs/install#windows-stable)
 
 ## Execução do projeto
