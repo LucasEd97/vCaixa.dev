@@ -25,6 +25,7 @@ Para executar o projeo é necessário inicar o docker através do comando abaixo
 docker start caixavirtual
 docker run --name vcaixa_postgres -e POSTGRES_PASSWORD=vcaixa -d postgres -p 5434:5432
 ```
+⚠Observação: O container utilizado no desenvolvimento do projeto utiliza o SO Windows ⚠
 
 Para executar o projeot siga os comandos abaixo:
 
