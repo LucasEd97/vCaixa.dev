@@ -16,10 +16,12 @@ Para iniciar o projeto, é necessário clonar o projeto do GitHub num diretório
 cd "diretorio de sua preferencia"
 git clone https://github.com/LucasEd97/vCaixa.dev.git
 ```
-Para instalar as dependências execute o comando abaixo:
+
+Para instalar as dependências e executar o projeto execute os comandos abaixo:
 
 ```shell
 npm i
+yarn dev:server
 ```
 
 ## [Documentação das rotas](https://documenter.getpostman.com/view/12464400/T1LVA4N2?version=latest)
