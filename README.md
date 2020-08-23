@@ -17,12 +17,22 @@ cd "diretorio de sua preferencia"
 git clone https://github.com/LucasEd97/vCaixa.dev.git
 ```
 
-Para instalar as dependências e executar o projeto execute os comandos abaixo:
+Para instalar as dependências do projeto execute o comando abaixo:
 
 ```shell
 npm i
-yarn dev:server
 ```
 
+Para executar o projeo é necessário inicar o docker através do comando abaixo:
+
+```shell
+docker start caixavirtual
+```
+
+Para execeutar o projeto utilize: 
+
+```shell
+yarn dev:server
+```
 ## [Documentação das rotas](https://documenter.getpostman.com/view/12464400/T1LVA4N2?version=latest)
 
