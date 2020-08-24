@@ -27,14 +27,12 @@ docker run --name vcaixa_postgres -e POSTGRES_PASSWORD=vcaixa -d postgres -p 543
 ```
 ⚠Observação: O container utilizado no desenvolvimento do projeto utiliza o SO Windows ⚠
 
-Para configurar o banco localmente, deve-se criar o banco conforme arquivo ```shell ormconfig.json ```
-
-Para executar o projeot siga os comandos abaixo:
-
 Para configurar o banco localmente, deve-se seguir os seguintes passos:
 
-renomear o arquivo ```shell ormconfig.json``` para ```shell ormconfig.json_PROD```
-renomear o arquivo ```shell ormconfig.json_DEV``` para ```shell ormconfig.json``` e criar o banco de dados conforme dados do arquivo de configuração
+Renomear o arquivo ```shell ormconfig.json``` para ```shell ormconfig.json_PROD``` e 
+Renomear o arquivo ```shell ormconfig.json_DEV``` para ```shell ormconfig.json``` e criar o banco de dados conforme dados do arquivo```shell ormconfig.json ```
+
+Para executar o projeot siga os comandos abaixo:
 
 ```shell
 yarn install
