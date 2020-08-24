@@ -6,7 +6,7 @@
     "password": "4e8e6d85336f1502a9d6072f77f483a8bff3b6a6e720be58648d112391165501",
     "database": "d3v3uhusl5koht",
     "entities": [
-        "./src/models/*.ts"
+        "./dist/models/*.js"
     ],
     "extra": {
         "ssl": true,
@@ -15,7 +15,7 @@
         }
     },
     "migrations": [
-        "./src/database/migrations/*.ts"
+        "./dist/database/migrations/*.js"
     ],
     "cli": {
         "migrationsDir": "./src/database/migrations"
