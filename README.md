@@ -19,7 +19,7 @@ cd "diretorio de sua preferencia"
 git clone https://github.com/LucasEd97/vCaixa.dev.git
 ```
 
-Para executar o projeo é necessário inicar o docker através do comando abaixo e também é necessário criar a seguinte imagem no docker: 
+Para executar o projeto localmente é necessário inicar o docker através do comando abaixo e também é necessário criar a seguinte imagem no docker: 
 
 ```shell
 docker start caixavirtual
@@ -29,24 +29,21 @@ docker run --name vcaixa_postgres -e POSTGRES_PASSWORD=vcaixa -d postgres -p 543
 
 Para configurar o banco localmente, deve-se seguir os seguintes passos:
 
-Renomear o arquivo ```shell ormconfig.json``` para ```shell ormconfig.json_PROD``` e 
-Renomear o arquivo ```shell ormconfig.json_DEV``` para ```shell ormconfig.json``` e criar o banco de dados conforme dados do arquivo```shell ormconfig.json ```
+Renomear o arquivo ``` ormconfig.json``` para ``` ormconfig.json_PROD``` e 
+Renomear o arquivo ``` ormconfig.json_DEV``` para ``` ormconfig.json``` e criar o banco de dados conforme dados do arquivo``` ormconfig.json ```
 
-Para executar o projeot siga os comandos abaixo:
+Para executar o projeto siga os comandos abaixo:
 
 ```shell
 yarn install
 yarn dev:server
 ```
 
-## URL da aplicação no Heroku:
-https://vcaixadev.herokuapp.com/
+## Documentação das rotas
 
-https://vcaixadev.herokuapp.com/transactions
+URL da aplicação em produção: ``` https://vcaixadev.herokuapp.com/```
 
-https://vcaixadev.herokuapp.com/Wallet
+URL da aplicação local: ``` http://localhost:3333```
 
-
-
-## [Documentação das rotas](https://documenter.getpostman.com/view/12464400/T1LVA4to?version=latest)
+[Documentação Postman](https://documenter.getpostman.com/view/12464400/T1LVA4to?version=latest)
 
