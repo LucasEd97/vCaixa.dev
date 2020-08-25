@@ -43,11 +43,19 @@ class CreateTransactionService {
             throw new Error('Wallet does not exist');
         }
 
-        const existsCategory = await categoriesRepository.findOne({
+        const existsCategory = await categoriesRepository.find({
             where: { id: category_id },
         });
         if (!existsCategory) {
             throw new Error(`Unexistent Category to save transaction`);
+        }
+
+        const foundCategory = existsCategory.find(
+            category => category.id === category_id,
+        );
+
+        if (!foundCategory) {
+            throw new Error(`Cattegory does not exist for this wallet`);
         }
 
         if (value < 0) {

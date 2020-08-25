@@ -7,7 +7,13 @@ exports.default = void 0;
 
 var _typeorm = require("typeorm");
 
-var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _dec14, _dec15, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _temp;
+var _Category = _interopRequireDefault(require("./Category"));
+
+var _Wallet = _interopRequireDefault(require("./Wallet"));
+
+var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _dec14, _dec15, _dec16, _dec17, _dec18, _dec19, _dec20, _dec21, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _temp;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _initializerDefineProperty(target, property, descriptor, context) { if (!descriptor) return; Object.defineProperty(target, property, { enumerable: descriptor.enumerable, configurable: descriptor.configurable, writable: descriptor.writable, value: descriptor.initializer ? descriptor.initializer.call(context) : void 0 }); }
 
@@ -15,7 +21,15 @@ function _applyDecoratedDescriptor(target, property, decorators, descriptor, con
 
 function _initializerWarningHelper(descriptor, context) { throw new Error('Decorating class property failed. Please ensure that ' + 'proposal-class-properties is enabled and runs after the decorators transform.'); }
 
-let Transaction = (_dec = (0, _typeorm.Entity)('transactions'), _dec2 = (0, _typeorm.PrimaryGeneratedColumn)('uuid'), _dec3 = Reflect.metadata("design:type", String), _dec4 = (0, _typeorm.Column)('timestamp with time zone'), _dec5 = Reflect.metadata("design:type", typeof Date === "undefined" ? Object : Date), _dec6 = (0, _typeorm.Column)('uuid'), _dec7 = Reflect.metadata("design:type", String), _dec8 = (0, _typeorm.Column)(), _dec9 = Reflect.metadata("design:type", String), _dec10 = (0, _typeorm.Column)('float'), _dec11 = Reflect.metadata("design:type", Number), _dec12 = (0, _typeorm.Column)(), _dec13 = Reflect.metadata("design:type", String), _dec14 = (0, _typeorm.Column)('uuid'), _dec15 = Reflect.metadata("design:type", String), _dec(_class = (_class2 = (_temp = class Transaction {
+let Transaction = (_dec = (0, _typeorm.Entity)('transactions'), _dec2 = (0, _typeorm.PrimaryGeneratedColumn)('uuid'), _dec3 = Reflect.metadata("design:type", String), _dec4 = (0, _typeorm.Column)('timestamp with time zone'), _dec5 = Reflect.metadata("design:type", typeof Date === "undefined" ? Object : Date), _dec6 = (0, _typeorm.Column)({
+  select: false
+}), _dec7 = Reflect.metadata("design:type", String), _dec8 = (0, _typeorm.OneToOne)(() => _Category.default), _dec9 = (0, _typeorm.JoinColumn)({
+  name: 'category_id'
+}), _dec10 = Reflect.metadata("design:type", typeof _Category.default === "undefined" ? Object : _Category.default), _dec11 = (0, _typeorm.Column)(), _dec12 = Reflect.metadata("design:type", String), _dec13 = (0, _typeorm.Column)('float'), _dec14 = Reflect.metadata("design:type", Number), _dec15 = (0, _typeorm.Column)(), _dec16 = Reflect.metadata("design:type", String), _dec17 = (0, _typeorm.Column)({
+  select: false
+}), _dec18 = Reflect.metadata("design:type", String), _dec19 = (0, _typeorm.ManyToOne)(() => _Wallet.default, wallet => wallet.transactions), _dec20 = (0, _typeorm.JoinColumn)({
+  name: 'wallet_id'
+}), _dec21 = Reflect.metadata("design:type", typeof _Wallet.default === "undefined" ? Object : _Wallet.default), _dec(_class = (_class2 = (_temp = class Transaction {
   constructor() {
     _initializerDefineProperty(this, "id", _descriptor, this);
 
@@ -23,13 +37,17 @@ let Transaction = (_dec = (0, _typeorm.Entity)('transactions'), _dec2 = (0, _typ
 
     _initializerDefineProperty(this, "category_id", _descriptor3, this);
 
-    _initializerDefineProperty(this, "type", _descriptor4, this);
+    _initializerDefineProperty(this, "category", _descriptor4, this);
 
-    _initializerDefineProperty(this, "value", _descriptor5, this);
+    _initializerDefineProperty(this, "type", _descriptor5, this);
 
-    _initializerDefineProperty(this, "description", _descriptor6, this);
+    _initializerDefineProperty(this, "value", _descriptor6, this);
 
-    _initializerDefineProperty(this, "wallet_id", _descriptor7, this);
+    _initializerDefineProperty(this, "description", _descriptor7, this);
+
+    _initializerDefineProperty(this, "wallet_id", _descriptor8, this);
+
+    _initializerDefineProperty(this, "wallet", _descriptor9, this);
   }
 
 }, _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "id", [_dec2, _dec3], {
@@ -47,22 +65,32 @@ let Transaction = (_dec = (0, _typeorm.Entity)('transactions'), _dec2 = (0, _typ
   enumerable: true,
   writable: true,
   initializer: null
-}), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "type", [_dec8, _dec9], {
+}), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "category", [_dec8, _dec9, _dec10], {
   configurable: true,
   enumerable: true,
   writable: true,
   initializer: null
-}), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "value", [_dec10, _dec11], {
+}), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "type", [_dec11, _dec12], {
   configurable: true,
   enumerable: true,
   writable: true,
   initializer: null
-}), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "description", [_dec12, _dec13], {
+}), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "value", [_dec13, _dec14], {
   configurable: true,
   enumerable: true,
   writable: true,
   initializer: null
-}), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "wallet_id", [_dec14, _dec15], {
+}), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "description", [_dec15, _dec16], {
+  configurable: true,
+  enumerable: true,
+  writable: true,
+  initializer: null
+}), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "wallet_id", [_dec17, _dec18], {
+  configurable: true,
+  enumerable: true,
+  writable: true,
+  initializer: null
+}), _descriptor9 = _applyDecoratedDescriptor(_class2.prototype, "wallet", [_dec19, _dec20, _dec21], {
   configurable: true,
   enumerable: true,
   writable: true,

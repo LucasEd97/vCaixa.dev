@@ -13,13 +13,13 @@ class CreateTransactions1598196782978 {
       name: 'transactions',
       columns: [{
         name: 'id',
-        type: 'uuid',
+        type: 'varchar',
         isPrimary: true,
         generationStrategy: 'uuid',
         default: 'uuid_generate_v4()'
       }, {
         name: 'category_id',
-        type: 'uuid',
+        type: 'varchar',
         isNullable: true
       }, {
         name: 'date',
@@ -39,7 +39,7 @@ class CreateTransactions1598196782978 {
         isNullable: false
       }, {
         name: 'wallet_id',
-        type: 'uuid',
+        type: 'varchar',
         isNullable: true
       }]
     }));
