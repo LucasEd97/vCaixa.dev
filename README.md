@@ -19,7 +19,7 @@ cd "diretorio de sua preferencia"
 git clone https://github.com/LucasEd97/vCaixa.dev.git
 ```
 
-Para executar o projeo é necessário inicar o docker através do comando abaixo e também é necessário criar a seguinte imagem no docker: 
+Para executar o projeto localmente é necessário inicar o docker através do comando abaixo e também é necessário criar a seguinte imagem no docker: 
 
 ```shell
 docker start caixavirtual
@@ -32,22 +32,12 @@ Para configurar o banco localmente, deve-se seguir os seguintes passos:
 Renomear o arquivo ``` ormconfig.json``` para ``` ormconfig.json_PROD``` e 
 Renomear o arquivo ``` ormconfig.json_DEV``` para ``` ormconfig.json``` e criar o banco de dados conforme dados do arquivo```shell ormconfig.json ```
 
-Para executar o projeot siga os comandos abaixo:
+Para executar o projeto siga os comandos abaixo:
 
 ```shell
 yarn install
 yarn dev:server
 ```
-
-## URL da aplicação no Heroku:
-https://vcaixadev.herokuapp.com/
-
-https://vcaixadev.herokuapp.com/Wallet
-
-https://vcaixadev.herokuapp.com/category
-
-https://vcaixadev.herokuapp.com/transactions
-
 
 ## Documentação das rotas
 
