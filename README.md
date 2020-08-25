@@ -23,21 +23,22 @@ Para executar o projeto localmente é necessário inicar o docker através do co
 
 ```shell
 docker start caixavirtual
-docker run --name vcaixa_postgres -e POSTGRES_PASSWORD=vcaixa -d postgres -p 5434:5432
+docker run --name caixavirtual -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
 ```
 ⚠Observação: O container utilizado no desenvolvimento do projeto utiliza o SO Windows ⚠
 
-Para configurar o banco localmente, deve-se seguir os seguintes passos:
+Para configurar a aplicação localmente, deve-se seguir os seguintes passos:
 
-Renomear o arquivo ``` ormconfig.json``` para ``` ormconfig.json_PROD``` e 
-Renomear o arquivo ``` ormconfig.json_DEV``` para ``` ormconfig.json``` e criar o banco de dados conforme dados do arquivo``` ormconfig.json ```
+1. Renomear o arquivo ``` ormconfig.json``` para ``` ormconfig.json_PROD``` e Renomear o arquivo ``` ormconfig.json_DEV``` para ``` ormconfig.json``` e criar o banco de dados conforme dados do arquivo ``` ormconfig.json ```
+2. Instalar as dependencias com ``yarn install``
+3. Rodar as migrations para criar a estutura do banco, usando o comando ```yarn typeorm migration:run```
+4. Para executar a aplicação em modo de desenvolvimento, utilizar o comando ```yarn dev:server```
 
-Para executar o projeto siga os comandos abaixo:
+Para gerar o build da aplicação deve-se executar o seguinte comando: ```yarn build``` com o build gerado execute o comando ```yarn start```
 
-```shell
-yarn install
-yarn dev:server
-```
+## Deploy
+
+A aplicaçã está publicada no Herouku, com deploy automático à partir de novos commits na branch `master`. A estrutura do banco de dados foi gerado à partir das migrations contidas na aplicação e foi criado utilizando os resources do próprio Heroku.
 
 ## Documentação das rotas
 
