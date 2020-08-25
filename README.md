@@ -41,11 +41,12 @@ yarn dev:server
 
 ## URL da aplicação no Heroku:
 https://vcaixadev.herokuapp.com/
+
 https://vcaixadev.herokuapp.com/transactions
+
 https://vcaixadev.herokuapp.com/Wallet
 
-⚠Observação: No momento o deploy da aplicação não está funcional⚠
 
 
-## [Documentação das rotas](https://documenter.getpostman.com/view/12464400/T1LVA4N2?version=latest)
+## [Documentação das rotas](https://documenter.getpostman.com/view/12464400/T1LVA4to?version=latest)
 
