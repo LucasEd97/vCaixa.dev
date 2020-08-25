@@ -7,24 +7,24 @@ import CreateTransactionService from '../services/CreateTransactionServices';
 
 const transacationRouter = Router();
 
-// lista todas as transactions
 transacationRouter.get('/', async (request, response) => {
-    const transactionsRepository = getCustomRepository(TransactionsRepository);
-    const transactions = await transactionsRepository.find();
+    try {
+        const transactionsRepository = getCustomRepository(
+            TransactionsRepository,
+        );
+        const transactions = await transactionsRepository.find();
 
-    return response.json(transactions);
+        return response.json(transactions);
+    } catch (err) {
+        return response.status(400).json({ error: err.message });
+    }
 });
 
 transacationRouter.post('/', async (request, response) => {
     try {
-        const {
-            date,
-            type,
-            value,
-            description,
-            wallet_id,
-            category_id,
-        } = request.body;
+        const { wallet_id } = request.headers;
+
+        const { date, type, value, description, category_id } = request.body;
 
         const createTransaction = new CreateTransactionService();
 
@@ -33,8 +33,8 @@ transacationRouter.post('/', async (request, response) => {
             type,
             value,
             description,
-            wallet_id,
             category_id,
+            wallet_id,
         });
 
         return response.json(transaction);

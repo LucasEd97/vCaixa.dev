@@ -1,5 +1,15 @@
 /* eslint-disable camelcase */
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+    Entity,
+    Column,
+    PrimaryGeneratedColumn,
+    OneToOne,
+    JoinColumn,
+    ManyToOne,
+} from 'typeorm';
+
+import Category from './Category';
+import Wallet from './Wallet';
 
 @Entity('transactions')
 class Transaction {
@@ -9,9 +19,13 @@ class Transaction {
     @Column('timestamp with time zone')
     date: Date;
 
-    @Column('uuid')
+    @Column({ select: false })
     // eslint-disable-next-line camelcase
     category_id: string;
+
+    @OneToOne(() => Category)
+    @JoinColumn({ name: 'category_id' })
+    category: Category;
 
     @Column()
     type: string;
@@ -22,8 +36,12 @@ class Transaction {
     @Column()
     description: string;
 
-    @Column('uuid')
+    @Column({ select: false })
     wallet_id: string;
+
+    @ManyToOne(() => Wallet, wallet => wallet.transactions)
+    @JoinColumn({ name: 'wallet_id' })
+    wallet: Wallet;
 }
 
 export default Transaction;

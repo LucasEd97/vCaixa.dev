@@ -1,4 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+    Entity,
+    Column,
+    PrimaryGeneratedColumn,
+    OneToMany,
+    JoinColumn,
+} from 'typeorm';
+import Transaction from './Transaction';
 
 @Entity('wallets')
 class Wallet {
@@ -7,6 +14,10 @@ class Wallet {
 
     @Column('float')
     total: number;
+
+    @OneToMany(() => Transaction, transaction => transaction.wallet)
+    @JoinColumn({ name: 'id' })
+    transactions: Transaction[];
 }
 
 export default Wallet;

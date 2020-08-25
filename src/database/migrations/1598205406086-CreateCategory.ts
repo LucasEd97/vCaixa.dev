@@ -8,13 +8,18 @@ export default class CreateCategory1598205406086 implements MigrationInterface {
                 columns: [
                     {
                         name: 'id',
-                        type: 'uuid',
+                        type: 'varchar',
                         isPrimary: true,
                         generationStrategy: 'uuid',
                         default: 'uuid_generate_v4()',
                     },
                     {
                         name: 'name',
+                        type: 'varchar',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'wallet_id',
                         type: 'varchar',
                         isNullable: false,
                     },

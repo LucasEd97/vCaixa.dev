@@ -1,16 +1,27 @@
+/* eslint-disable camelcase */
 import { Router } from 'express';
-import { getCustomRepository } from 'typeorm';
-import WalletsRepository from '../repositories/WalletsRepository';
 import CreateWalletService from '../services/CreateWalletServices';
+import ListWalletService from '../services/ListWalletServices';
 
 // Retorna objeto com Saldo total da carteira e movimentações do dia
 const walletRouter = Router();
 
 walletRouter.get('/', async (request, response) => {
-    const walletRepository = getCustomRepository(WalletsRepository);
-    const wallets = await walletRepository.find();
+    try {
+        const { wallet_id } = request.headers;
+        const { initial_date, final_date } = request.body;
 
-    return response.json(wallets);
+        const listWallet = new ListWalletService();
+
+        const wallet = await listWallet.execute({
+            wallet_id,
+            initial_date,
+            final_date,
+        });
+        return response.json(wallet);
+    } catch (err) {
+        return response.status(400).json({ error: err.message });
+    }
 });
 
 walletRouter.post('/', async (request, response) => {
