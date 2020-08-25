@@ -44,7 +44,7 @@ class CreateTransactionService {
         }
 
         const existsCategory = await categoriesRepository.find({
-            where: { id: category_id },
+            where: { wallet_id },
         });
         if (!existsCategory) {
             throw new Error(`Unexistent Category to save transaction`);
