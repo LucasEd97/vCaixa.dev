@@ -30,7 +30,7 @@ docker run --name vcaixa_postgres -e POSTGRES_PASSWORD=vcaixa -d postgres -p 543
 Para configurar o banco localmente, deve-se seguir os seguintes passos:
 
 Renomear o arquivo ``` ormconfig.json``` para ``` ormconfig.json_PROD``` e 
-Renomear o arquivo ``` ormconfig.json_DEV``` para ``` ormconfig.json``` e criar o banco de dados conforme dados do arquivo```shell ormconfig.json ```
+Renomear o arquivo ``` ormconfig.json_DEV``` para ``` ormconfig.json``` e criar o banco de dados conforme dados do arquivo``` ormconfig.json ```
 
 Para executar o projeto siga os comandos abaixo:
 
